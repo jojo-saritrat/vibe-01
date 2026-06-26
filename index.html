@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EnglishFlow — เรียนภาษาอังกฤษง่ายๆ ทุกวัน</title>
+    <title>ChineseFlow — เรียนภาษาจีนง่ายๆ ทุกวัน</title>
     <style>
         :root {
-            --bg: #0f172a;
-            --surface: #1e293b;
-            --surface-hover: #334155;
-            --primary: #38bdf8;
-            --primary-dark: #0ea5e9;
-            --accent: #a78bfa;
-            --success: #4ade80;
-            --warning: #fbbf24;
-            --danger: #f87171;
-            --text: #f1f5f9;
-            --text-muted: #94a3b8;
+            --bg: #f8fafc;
+            --surface: #ffffff;
+            --surface-hover: #f1f5f9;
+            --primary: #c41e3a;
+            --primary-dark: #9f1239;
+            --accent: #b45309;
+            --success: #16a34a;
+            --warning: #ca8a04;
+            --danger: #dc2626;
+            --text: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
             --radius: 16px;
         }
 
@@ -25,19 +26,20 @@
         body {
             background: var(--bg);
             color: var(--text);
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', system-ui, -apple-system, sans-serif;
             line-height: 1.6;
             min-height: 100vh;
         }
 
         header {
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-            border-bottom: 1px solid #334155;
+            background: linear-gradient(135deg, #ffffff 0%, #fef2f2 100%);
+            border-bottom: 1px solid var(--border);
             padding: 1rem 2rem;
             position: sticky;
             top: 0;
             z-index: 100;
             backdrop-filter: blur(12px);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
         }
 
         .header-inner {
@@ -66,7 +68,7 @@
 
         nav button {
             background: transparent;
-            border: 1px solid #334155;
+            border: 1px solid var(--border);
             color: var(--text-muted);
             padding: 0.5rem 1rem;
             border-radius: 999px;
@@ -77,7 +79,7 @@
 
         nav button:hover, nav button.active {
             background: var(--primary);
-            color: var(--bg);
+            color: #ffffff;
             border-color: var(--primary);
         }
 
@@ -89,6 +91,8 @@
             padding: 0.5rem 1rem;
             border-radius: 999px;
             font-size: 0.875rem;
+            border: 1px solid var(--border);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
         }
 
         .streak-badge strong { color: var(--warning); }
@@ -139,7 +143,7 @@
         .level-pill {
             padding: 0.5rem 1.25rem;
             border-radius: 999px;
-            border: 2px solid #334155;
+            border: 2px solid var(--border);
             background: var(--surface);
             color: var(--text);
             cursor: pointer;
@@ -150,7 +154,7 @@
         .level-pill:hover { border-color: var(--primary); }
         .level-pill.selected {
             border-color: var(--primary);
-            background: rgba(56, 189, 248, 0.15);
+            background: rgba(196, 30, 58, 0.08);
             color: var(--primary);
         }
 
@@ -165,19 +169,21 @@
             background: var(--surface);
             border-radius: var(--radius);
             padding: 1.5rem;
-            border: 1px solid #334155;
-            transition: transform 0.2s, border-color 0.2s;
+            border: 1px solid var(--border);
+            transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
         }
 
         .card:hover {
             transform: translateY(-2px);
             border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(196, 30, 58, 0.1);
         }
 
         .card h3 {
             color: var(--primary);
             margin-bottom: 0.5rem;
-            font-size: 1.25rem;
+            font-size: 1.5rem;
         }
 
         .card .thai { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.75rem; }
@@ -186,7 +192,6 @@
             padding: 0.75rem;
             border-radius: 8px;
             font-size: 0.875rem;
-            font-style: italic;
             color: var(--text-muted);
         }
 
@@ -228,13 +233,14 @@
             padding: 2rem;
             text-align: center;
             border: 2px solid var(--primary);
-            background: linear-gradient(145deg, var(--surface), #1a2744);
+            background: linear-gradient(145deg, #ffffff, #fef2f2);
+            box-shadow: 0 4px 16px rgba(196, 30, 58, 0.12);
         }
 
         .flashcard-back { transform: rotateY(180deg); }
 
         .flashcard-front .word {
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: 700;
             color: var(--primary);
         }
@@ -247,7 +253,7 @@
 
         .flashcard-back .pronunciation {
             color: var(--text-muted);
-            font-size: 1rem;
+            font-size: 1.1rem;
         }
 
         .flashcard-hint { color: var(--text-muted); font-size: 0.875rem; }
@@ -271,7 +277,7 @@
 
         .btn-primary {
             background: var(--primary);
-            color: var(--bg);
+            color: #ffffff;
         }
 
         .btn-primary:hover { background: var(--primary-dark); }
@@ -279,17 +285,17 @@
         .btn-outline {
             background: transparent;
             color: var(--text);
-            border: 2px solid #334155;
+            border: 2px solid var(--border);
         }
 
         .btn-outline:hover { border-color: var(--primary); color: var(--primary); }
 
-        .btn-success { background: var(--success); color: var(--bg); }
-        .btn-danger { background: var(--danger); color: var(--bg); }
+        .btn-success { background: var(--success); color: #ffffff; }
+        .btn-danger { background: var(--danger); color: #ffffff; }
 
         .progress-bar-wrap {
             width: min(420px, 90vw);
-            background: var(--surface);
+            background: var(--border);
             border-radius: 999px;
             height: 8px;
             overflow: hidden;
@@ -308,7 +314,8 @@
             padding: 2rem;
             max-width: 600px;
             margin: 0 auto;
-            border: 1px solid #334155;
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
         }
 
         .quiz-question {
@@ -317,7 +324,7 @@
             text-align: center;
         }
 
-        .quiz-question strong { color: var(--primary); font-size: 1.5rem; }
+        .quiz-question strong { color: var(--primary); font-size: 1.75rem; }
 
         .quiz-options {
             display: flex;
@@ -328,7 +335,7 @@
         .quiz-option {
             padding: 1rem 1.25rem;
             background: var(--bg);
-            border: 2px solid #334155;
+            border: 2px solid var(--border);
             border-radius: 12px;
             cursor: pointer;
             text-align: left;
@@ -338,8 +345,8 @@
         }
 
         .quiz-option:hover:not(.disabled) { border-color: var(--primary); }
-        .quiz-option.correct { border-color: var(--success); background: rgba(74, 222, 128, 0.15); }
-        .quiz-option.wrong { border-color: var(--danger); background: rgba(248, 113, 113, 0.15); }
+        .quiz-option.correct { border-color: var(--success); background: rgba(22, 163, 74, 0.1); }
+        .quiz-option.wrong { border-color: var(--danger); background: rgba(220, 38, 38, 0.1); }
         .quiz-option.disabled { cursor: default; opacity: 0.7; }
 
         .quiz-score {
@@ -356,16 +363,17 @@
             background: var(--surface);
             border-radius: var(--radius);
             padding: 1.25rem 1.5rem;
-            border: 1px solid #334155;
+            border: 1px solid var(--border);
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
             gap: 1rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
         }
 
-        .phrase-en {
-            font-size: 1.125rem;
+        .phrase-zh {
+            font-size: 1.25rem;
             font-weight: 600;
             color: var(--primary);
         }
@@ -374,7 +382,7 @@
 
         .speak-btn {
             background: var(--surface-hover);
-            border: none;
+            border: 1px solid var(--border);
             color: var(--primary);
             width: 40px;
             height: 40px;
@@ -384,14 +392,16 @@
             transition: background 0.2s;
         }
 
-        .speak-btn:hover { background: var(--primary); color: var(--bg); }
+        .speak-btn:hover { background: var(--primary); color: #ffffff; }
 
         .grammar-card {
             background: var(--surface);
             border-radius: var(--radius);
             padding: 1.5rem;
+            border: 1px solid var(--border);
             border-left: 4px solid var(--accent);
             margin-bottom: 1rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
         }
 
         .grammar-card h3 { color: var(--accent); margin-bottom: 0.5rem; }
@@ -420,8 +430,9 @@
             padding: 2rem;
             color: var(--text-muted);
             font-size: 0.8rem;
-            border-top: 1px solid #334155;
+            border-top: 1px solid var(--border);
             margin-top: 3rem;
+            background: var(--surface);
         }
 
         footer .version { opacity: 0.5; }
@@ -430,7 +441,7 @@
 <body>
     <header>
         <div class="header-inner">
-            <div class="logo">English<span>Flow</span></div>
+            <div class="logo">Chinese<span>Flow</span></div>
             <nav>
                 <button class="active" data-section="home">หน้าแรก</button>
                 <button data-section="vocab">คำศัพท์</button>
@@ -449,7 +460,7 @@
         <!-- Home -->
         <section id="home" class="section active">
             <div class="hero">
-                <h1>เรียนภาษาอังกฤษง่ายๆ ทุกวัน</h1>
+                <h1>เรียนภาษาจีนง่ายๆ ทุกวัน</h1>
                 <p>ฝึกคำศัพท์ แฟลชการ์ด แบบทดสอบ และไวยากรณ์พื้นฐาน — เริ่มต้นวันนี้เลย!</p>
                 <div class="level-pills">
                     <button class="level-pill selected" data-level="beginner">เริ่มต้น</button>
@@ -464,7 +475,7 @@
         <!-- Vocabulary -->
         <section id="vocab" class="section">
             <h2 class="section-title">📚 คำศัพท์ประจำวัน</h2>
-            <p class="section-subtitle">เลือกระดับแล้วเรียนรู้คำศัพท์ใหม่ๆ พร้อมตัวอย่างประโยค</p>
+            <p class="section-subtitle">เลือกระดับแล้วเรียนรู้คำศัพท์จีนใหม่ๆ พร้อมพินอินและตัวอย่างประโยค</p>
             <div class="level-pills" id="vocab-levels">
                 <button class="level-pill selected" data-level="beginner">เริ่มต้น</button>
                 <button class="level-pill" data-level="intermediate">ปานกลาง</button>
@@ -486,11 +497,11 @@
                     <div class="flashcard-inner">
                         <div class="flashcard-front">
                             <p class="flashcard-hint">คลิกเพื่อพลิกการ์ด</p>
-                            <p class="word" id="fc-word">Hello</p>
+                            <p class="word" id="fc-word">你好</p>
                         </div>
                         <div class="flashcard-back">
                             <p class="meaning" id="fc-meaning">สวัสดี</p>
-                            <p class="pronunciation" id="fc-pron">/həˈloʊ/</p>
+                            <p class="pronunciation" id="fc-pron">nǐ hǎo</p>
                         </div>
                     </div>
                 </div>
@@ -505,9 +516,9 @@
         <!-- Quiz -->
         <section id="quiz" class="section">
             <h2 class="section-title">✏️ แบบทดสอบ</h2>
-            <p class="section-subtitle">ทดสอบความรู้คำศัพท์ภาษาอังกฤษของคุณ</p>
+            <p class="section-subtitle">ทดสอบความรู้คำศัพท์ภาษาจีนของคุณ</p>
             <div class="quiz-box">
-                <p class="quiz-question" id="quiz-question">ความหมายของคำว่า <strong id="quiz-word">Hello</strong> คืออะไร?</p>
+                <p class="quiz-question" id="quiz-question">ความหมายของคำว่า <strong id="quiz-word">你好</strong> คืออะไร?</p>
                 <div class="quiz-options" id="quiz-options"></div>
                 <p class="quiz-score">คะแนน: <span id="quiz-score">0</span> / <span id="quiz-total">0</span></p>
                 <div style="text-align: center; margin-top: 1rem;">
@@ -520,106 +531,106 @@
         <!-- Phrases -->
         <section id="phrases" class="section">
             <h2 class="section-title">💬 ประโยคใช้บ่อยในชีวิตประจำวัน</h2>
-            <p class="section-subtitle">กดปุ่ม 🔊 เพื่อฟังการออกเสียง</p>
+            <p class="section-subtitle">กดปุ่ม 🔊 เพื่อฟังการออกเสียงภาษาจีน</p>
             <div class="phrase-list" id="phrase-list"></div>
         </section>
 
         <!-- Grammar -->
         <section id="grammar" class="section">
             <h2 class="section-title">📖 ไวยากรณ์พื้นฐาน</h2>
-            <p class="section-subtitle">โครงสร้างประโยคที่ใช้บ่อยในภาษาอังกฤษ</p>
+            <p class="section-subtitle">โครงสร้างประโยคที่ใช้บ่อยในภาษาจีน</p>
             <div id="grammar-list"></div>
         </section>
     </main>
 
     <footer>
-        <p>EnglishFlow — เรียนภาษาอังกฤษด้วยตัวเอง ทุกวันคือความก้าวหน้า</p>
+        <p>ChineseFlow — เรียนภาษาจีนด้วยตัวเอง ทุกวันคือความก้าวหน้า</p>
         <p class="version">v BUILD_VERSION</p>
     </footer>
 
     <script>
         const vocabulary = {
             beginner: [
-                { word: "Hello", meaning: "สวัสดี", pron: "/həˈloʊ/", example: "Hello! How are you?" },
-                { word: "Thank you", meaning: "ขอบคุณ", pron: "/θæŋk juː/", example: "Thank you for your help." },
-                { word: "Goodbye", meaning: "ลาก่อน", pron: "/ɡʊdˈbaɪ/", example: "Goodbye, see you tomorrow!" },
-                { word: "Please", meaning: "กรุณา / โปรด", pron: "/pliːz/", example: "Please sit down." },
-                { word: "Sorry", meaning: "ขอโทษ", pron: "/ˈsɒri/", example: "I'm sorry for being late." },
-                { word: "Yes", meaning: "ใช่", pron: "/jes/", example: "Yes, I agree." },
-                { word: "No", meaning: "ไม่", pron: "/noʊ/", example: "No, thank you." },
-                { word: "Water", meaning: "น้ำ", pron: "/ˈwɔːtər/", example: "Can I have some water?" },
-                { word: "Food", meaning: "อาหาร", pron: "/fuːd/", example: "The food is delicious." },
-                { word: "Friend", meaning: "เพื่อน", pron: "/frend/", example: "She is my best friend." }
+                { word: "你好", meaning: "สวัสดี", pron: "nǐ hǎo", example: "你好！你好吗？" },
+                { word: "谢谢", meaning: "ขอบคุณ", pron: "xièxie", example: "谢谢你的帮助。" },
+                { word: "再见", meaning: "ลาก่อน", pron: "zàijiàn", example: "再见，明天见！" },
+                { word: "请", meaning: "กรุณา / โปรด", pron: "qǐng", example: "请坐。" },
+                { word: "对不起", meaning: "ขอโทษ", pron: "duìbuqǐ", example: "对不起，我迟到了。" },
+                { word: "是", meaning: "ใช่", pron: "shì", example: "是的，我同意。" },
+                { word: "不", meaning: "ไม่", pron: "bù", example: "不，谢谢。" },
+                { word: "水", meaning: "น้ำ", pron: "shuǐ", example: "我可以喝点水吗？" },
+                { word: "饭", meaning: "อาหาร / ข้าว", pron: "fàn", example: "这饭很好吃。" },
+                { word: "朋友", meaning: "เพื่อน", pron: "péngyou", example: "她是我最好的朋友。" }
             ],
             intermediate: [
-                { word: "Achievement", meaning: "ความสำเร็จ", pron: "/əˈtʃiːvmənt/", example: "It was a great achievement." },
-                { word: "Opportunity", meaning: "โอกาส", pron: "/ˌɒpərˈtjuːnəti/", example: "Don't miss this opportunity." },
-                { word: "Experience", meaning: "ประสบการณ์", pron: "/ɪkˈspɪəriəns/", example: "I have five years of experience." },
-                { word: "Challenge", meaning: "ความท้าทาย", pron: "/ˈtʃælɪndʒ/", example: "Every challenge makes you stronger." },
-                { word: "Improve", meaning: "ปรับปรุง / พัฒนา", pron: "/ɪmˈpruːv/", example: "I want to improve my English." },
-                { word: "Decision", meaning: "การตัดสินใจ", pron: "/dɪˈsɪʒn/", example: "It was a difficult decision." },
-                { word: "Environment", meaning: "สิ่งแวดล้อม", pron: "/ɪnˈvaɪrənmənt/", example: "Protect the environment." },
-                { word: "Knowledge", meaning: "ความรู้", pron: "/ˈnɒlɪdʒ/", example: "Knowledge is power." },
-                { word: "Confidence", meaning: "ความมั่นใจ", pron: "/ˈkɒnfɪdəns/", example: "Speak with confidence." },
-                { word: "Responsible", meaning: "รับผิดชอบ", pron: "/rɪˈspɒnsəbl/", example: "Be responsible for your actions." }
+                { word: "成功", meaning: "ความสำเร็จ", pron: "chénggōng", example: "这是一个很大的成功。" },
+                { word: "机会", meaning: "โอกาส", pron: "jīhuì", example: "不要错过这个机会。" },
+                { word: "经验", meaning: "ประสบการณ์", pron: "jīngyàn", example: "我有五年的工作经验。" },
+                { word: "挑战", meaning: "ความท้าทาย", pron: "tiǎozhàn", example: "每个挑战都让你更强。" },
+                { word: "提高", meaning: "ปรับปรุง / พัฒนา", pron: "tígāo", example: "我想提高我的中文水平。" },
+                { word: "决定", meaning: "การตัดสินใจ", pron: "juédìng", example: "这是一个很难的决定。" },
+                { word: "环境", meaning: "สิ่งแวดล้อม", pron: "huánjìng", example: "我们要保护环境。" },
+                { word: "知识", meaning: "ความรู้", pron: "zhīshi", example: "知识就是力量。" },
+                { word: "信心", meaning: "ความมั่นใจ", pron: "xìnxīn", example: "自信地说中文。" },
+                { word: "责任", meaning: "ความรับผิดชอบ", pron: "zérèn", example: "对自己的行为负责。" }
             ],
             advanced: [
-                { word: "Ambiguous", meaning: "คลุมเครือ / ไม่ชัดเจน", pron: "/æmˈbɪɡjuəs/", example: "The instructions were ambiguous." },
-                { word: "Comprehensive", meaning: "ครอบคลุม / สมบูรณ์", pron: "/ˌkɒmprɪˈhensɪv/", example: "A comprehensive report was submitted." },
-                { word: "Inevitable", meaning: "หลีกเลี่ยงไม่ได้", pron: "/ɪnˈevɪtəbl/", example: "Change is inevitable." },
-                { word: "Perspective", meaning: "มุมมอง", pron: "/pəˈspektɪv/", example: "Try to see it from my perspective." },
-                { word: "Significant", meaning: "สำคัญ / มีนัยสำคัญ", pron: "/sɪɡˈnɪfɪkənt/", example: "There was a significant improvement." },
-                { word: "Sophisticated", meaning: "ซับซ้อน / ทันสมัย", pron: "/səˈfɪstɪkeɪtɪd/", example: "A sophisticated algorithm." },
-                { word: "Substantial", meaning: "จำนวนมาก / สำคัญ", pron: "/səbˈstænʃl/", example: "A substantial amount of money." },
-                { word: "Unprecedented", meaning: "ไม่เคยมีมาก่อน", pron: "/ʌnˈpresɪdentɪd/", example: "Unprecedented growth in sales." },
-                { word: "Versatile", meaning: "อเนกประสงค์", pron: "/ˈvɜːsətaɪl/", example: "A versatile tool for many tasks." },
-                { word: "Widespread", meaning: "แพร่หลาย", pron: "/ˈwaɪdspred/", example: "Widespread adoption of technology." }
+                { word: "模糊", meaning: "คลุมเครือ / ไม่ชัดเจน", pron: "móhu", example: "说明很模糊。" },
+                { word: "全面", meaning: "ครอบคลุม / สมบูรณ์", pron: "quánmiàn", example: "提交了一份全面的报告。" },
+                { word: "不可避免", meaning: "หลีกเลี่ยงไม่ได้", pron: "bùkě bìmiǎn", example: "变化是不可避免的。" },
+                { word: "观点", meaning: "มุมมอง", pron: "guāndiǎn", example: "试着从我的角度看。" },
+                { word: "重要", meaning: "สำคัญ / มีนัยสำคัญ", pron: "zhòngyào", example: "有了显著的进步。" },
+                { word: "复杂", meaning: "ซับซ้อน", pron: "fùzá", example: "这是一个复杂的算法。" },
+                { word: "大量", meaning: "จำนวนมาก", pron: "dàliàng", example: "大量的资金。" },
+                { word: "前所未有", meaning: "ไม่เคยมีมาก่อน", pron: "qián suǒ wèi yǒu", example: "销售额前所未有地增长。" },
+                { word: "灵活", meaning: "ยืดหยุ่น / อเนกประสงค์", pron: "línghuó", example: "一个多用途的工具。" },
+                { word: "广泛", meaning: "แพร่หลาย", pron: "guǎngfàn", example: "技术的广泛采用。" }
             ]
         };
 
         const phrases = [
-            { en: "How are you?", th: "สบายดีไหม?" },
-            { en: "Nice to meet you.", th: "ยินดีที่ได้รู้จัก" },
-            { en: "What's your name?", th: "คุณชื่ออะไร?" },
-            { en: "I don't understand.", th: "ฉันไม่เข้าใจ" },
-            { en: "Could you speak slower?", th: "พูดช้าลงหน่อยได้ไหม?" },
-            { en: "Where is the bathroom?", th: "ห้องน้ำอยู่ที่ไหน?" },
-            { en: "How much does it cost?", th: "ราคาเท่าไหร่?" },
-            { en: "I'm looking for...", th: "ฉันกำลังมองหา..." },
-            { en: "Can you help me?", th: "ช่วยฉันหน่อยได้ไหม?" },
-            { en: "See you later!", th: "แล้วเจอกัน!" }
+            { zh: "你好吗？", th: "สบายดีไหม?" },
+            { zh: "很高兴认识你。", th: "ยินดีที่ได้รู้จัก" },
+            { zh: "你叫什么名字？", th: "คุณชื่ออะไร?" },
+            { zh: "我不明白。", th: "ฉันไม่เข้าใจ" },
+            { zh: "可以说慢一点吗？", th: "พูดช้าลงหน่อยได้ไหม?" },
+            { zh: "洗手间在哪里？", th: "ห้องน้ำอยู่ที่ไหน?" },
+            { zh: "多少钱？", th: "ราคาเท่าไหร่?" },
+            { zh: "我在找……", th: "ฉันกำลังมองหา..." },
+            { zh: "你能帮我吗？", th: "ช่วยฉันหน่อยได้ไหม?" },
+            { zh: "回头见！", th: "แล้วเจอกัน!" }
         ];
 
         const grammar = [
             {
-                title: "Present Simple (ปัจจุบันกาลธรรมดา)",
-                desc: "ใช้พูดถึงสิ่งที่ทำเป็นประจำ หรือความจริงทั่วไป",
-                formula: "Subject + Verb (+ s/es สำหรับ he/she/it)",
-                example: "I eat breakfast every day. / She works in Bangkok."
+                title: "โครงสร้าง 是 (shì) — เป็น / คือ",
+                desc: "ใช้เชื่อมประธานกับคำนามหรือคำคุณศัพท์",
+                formula: "ประธาน + 是 + คำนาม/คำคุณศัพท์",
+                example: "我是学生。/ 他是老师。"
             },
             {
-                title: "Present Continuous (ปัจจุบันกาลกำลังทำ)",
-                desc: "ใช้พูดถึงสิ่งที่กำลังเกิดขึ้นตอนนี้",
-                formula: "Subject + am/is/are + Verb-ing",
-                example: "I am studying English. / They are playing football."
+                title: "คำถามด้วย 吗 (ma)",
+                desc: "วาง 吗 ท้ายประโยคบอกเล่าเพื่อเปลี่ยนเป็นคำถามใช่/ไม่",
+                formula: "ประโยคบอกเล่า + 吗？",
+                example: "你喜欢咖啡吗？/ 她是泰国人吗？"
             },
             {
-                title: "Past Simple (อดีตกาลธรรมดา)",
-                desc: "ใช้พูดถึงสิ่งที่เกิดขึ้นในอดีตและจบแล้ว",
-                formula: "Subject + Verb (past form)",
-                example: "I visited Chiang Mai last year. / He went home early."
+                title: "了 (le) — สิ่งที่เกิดขึ้นแล้ว",
+                desc: "ใช้บอกว่าเหตุการณ์เกิดขึ้นแล้วหรือสถานะเปลี่ยนไป",
+                formula: "กริยา + 了",
+                example: "我吃了早饭。/ 他回家了。"
             },
             {
-                title: "Future with 'will'",
-                desc: "ใช้พูดถึงสิ่งที่จะเกิดขึ้นในอนาคต หรือการตัดสินใจทันที",
-                formula: "Subject + will + Verb",
-                example: "I will call you tomorrow. / It will rain tonight."
+                title: "的 (de) — ความเป็นเจ้าของ / คำขยาย",
+                desc: "ใช้เชื่อมคำขยายกับคำนาม หรือแสดงความเป็นเจ้าของ",
+                formula: "คำขยาย/เจ้าของ + 的 + คำนาม",
+                example: "我的书 / 红色的花"
             },
             {
-                title: "Questions with 'Do/Does'",
-                desc: "ใช้ถามคำถามใน Present Simple",
-                formula: "Do/Does + Subject + Verb?",
-                example: "Do you like coffee? / Does she speak Thai?"
+                title: "在 (zài) — อยู่ที่ / กำลังทำ",
+                desc: "ใช้บอกสถานที่ หรือกิริยาที่กำลังเกิดขึ้น",
+                formula: "ประธาน + 在 + สถานที่ / ประธาน + 在 + กริยา",
+                example: "我在北京。/ 他在学习中文。"
             }
         ];
 
@@ -685,20 +696,20 @@
             preview.innerHTML = vocabulary[currentLevel].slice(0, 3).map(v => `
                 <div class="card">
                     <h3>${v.word}</h3>
-                    <p class="thai">${v.meaning}</p>
+                    <p class="thai">${v.meaning} · ${v.pron}</p>
                     <p class="example">"${v.example}"</p>
                 </div>
             `).join('');
         }
 
         function renderPhrases() {
-            document.getElementById('phrase-list').innerHTML = phrases.map((p, i) => `
+            document.getElementById('phrase-list').innerHTML = phrases.map(p => `
                 <div class="phrase-item">
                     <div>
-                        <p class="phrase-en">${p.en}</p>
+                        <p class="phrase-zh">${p.zh}</p>
                         <p class="phrase-th">${p.th}</p>
                     </div>
-                    <button class="speak-btn" onclick="speakText('${p.en.replace(/'/g, "\\'")}')" title="ฟังเสียง">🔊</button>
+                    <button class="speak-btn" onclick="speakText('${p.zh.replace(/'/g, "\\'")}')" title="ฟังเสียง">🔊</button>
                 </div>
             `).join('');
         }
@@ -764,7 +775,7 @@
             if ('speechSynthesis' in window) {
                 speechSynthesis.cancel();
                 const u = new SpeechSynthesisUtterance(text);
-                u.lang = 'en-US';
+                u.lang = 'zh-CN';
                 u.rate = 0.85;
                 speechSynthesis.speak(u);
             }
@@ -832,13 +843,13 @@
 
         function updateStreak() {
             const today = new Date().toDateString();
-            const data = JSON.parse(localStorage.getItem('englishflow') || '{}');
+            const data = JSON.parse(localStorage.getItem('chineseflow') || '{}');
             if (data.lastVisit !== today) {
                 const yesterday = new Date();
                 yesterday.setDate(yesterday.getDate() - 1);
                 data.streak = data.lastVisit === yesterday.toDateString() ? (data.streak || 0) + 1 : 1;
                 data.lastVisit = today;
-                localStorage.setItem('englishflow', JSON.stringify(data));
+                localStorage.setItem('chineseflow', JSON.stringify(data));
             }
             document.getElementById('streak').textContent = data.streak || 1;
         }
